@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Регистрация</title>
+</head>
+<body>
+<h2>Регистрация пользователя</h2>
+{{#message}}
+    {{message}}
+{{/message}}
+<form action="/registration" method="post">
+    <div><label> Username : <input type="text" name="username"/> </label></div>
+    <div><label> Пароль : <input type="password" name="password"/> </label></div>
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+    <div><input type="submit" value="Sign In"/></div>
+</form>
+<a href="/">Вернуться на главный экран</a>
+</body>
+</html>

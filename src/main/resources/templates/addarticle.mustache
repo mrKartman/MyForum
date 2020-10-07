@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+</head>
+<body>
+<div>
+    {{#message}}
+        {{message}}
+    {{/message}}
+
+    <form action="/add" method="post">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+        Автор: <input type="text" name="author">
+        Тема: <input type="text" name="them" label="them">
+        Сообщение: <input type="text" name="message">
+        Тэг: <input type="text" name="tag">
+        <input type="submit" name="Отправить !"/>
+    </form>
+    <a href="/">Вернуться на главный экран</a>
+</div>
+</body>
+</html>

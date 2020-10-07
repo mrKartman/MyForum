@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+</head>
+<body>
+    <h2>Главная страница</h2>
+    {{#hello}}
+        {{hello}}
+    {{/hello}}
+
+    <a href="/add">Добавить статью</a>
+    <br/>
+    <form>
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+        {{#articles}}
+            <div>
+                <b>{{author}}</b>
+                <span>{{them}}</span>
+                <span>{{message}}</span>
+                <span>{{tag}}</span>
+            </div>
+        {{/articles}}
+    </form>
+    <div>
+        {{#DeleteArticle}}
+            {{DeleteArticle}}
+        {{/DeleteArticle}}
+    </div>
+</body>
+<p><a href="/registration">Регистрация</a></p>
+<p><a href="/login">Войти</a></p>
+<p><a href="/add">Добавить статью</a></p>
+<div>
+    <form action="/logout" method="post">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+        <input type="submit" value="Sign Out"/>
+    </form>
+</div>
+</html>
